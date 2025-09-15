@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Duo Game — Prototype</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">Duo Game</div>
+      <div class="rank">Rank ▲ <span id="rank">1</span></div>
+    </header>
+
+    <main id="screen-home" class="screen active">
+      <div class="hero">
+        <h1>Проверка связи</h1>
+        <p>Короткие дуо-раунды для пары: синхрон и реакция.</p>
+      </div>
+      <div class="card">
+        <h2>Тренировка (офлайн)</h2>
+        <p>3 раунда против ИИ-пары. Просто посмотреть, как ощущается на телефоне.</p>
+        <button class="btn primary" id="btn-start">Играть</button>
+      </div>
+
+      <div class="card">
+        <h2>Тема</h2>
+        <select id="theme">
+          <option value="dark">Тёмная</option>
+          <option value="light">Светлая</option>
+          <option value="neon">Неон</option>
+        </select>
+      </div>
+
+      <footer class="footer">v0.1 — browser mock</footer>
+    </main>
+
+    <main id="screen-match" class="screen">
+      <div class="hud">
+        <div>Раунд: <span id="round">1</span>/3</div>
+        <div>Очки: <span id="score">0</span></div>
+      </div>
+      <section id="arena" class="arena"></section>
+      <div class="nav">
+        <button class="btn" id="btn-exit">Выйти</button>
+      </div>
+    </main>
+
+    <main id="screen-result" class="screen">
+      <div class="result">
+        <h2>Матч завершён</h2>
+        <div class="scoreline">
+          <div>Ваши очки</div>
+          <div class="big" id="finalScore">0</div>
+        </div>
+        <div id="badge" class="badge hidden">+ Ранг!</div>
+        <button class="btn primary" id="btn-restart">Ещё раз</button>
+        <button class="btn" id="btn-home">На главную</button>
+      </div>
+    </main>
+  </div>
+  <script src="../src/app.js"></script>
+</body>
+</html>
