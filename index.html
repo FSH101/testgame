@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фразогенератор</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Фразогенератор</h1>
+      <span class="muted">ChatGPT → короткие рандомные фразы</span>
+    </header>
+
+    <section class="panel">
+      <label class="row">
+        <span>Тема</span>
+        <select id="topic">
+          <option value="motivation">мотивация</option>
+          <option value="romance">романтика</option>
+          <option value="irony">ирония</option>
+          <option value="neutral" selected>нейтрально</option>
+        </select>
+      </label>
+      <label class="row">
+        <span>Стиль</span>
+        <select id="style">
+          <option value="short" selected>короткие (4–8 слов)</option>
+          <option value="punchy">ударные (1–2 строки)</option>
+          <option value="soft">мягкие</option>
+        </select>
+      </label>
+      <label class="row">
+        <span>Сколько</span>
+        <input id="count" type="number" min="1" max="10" value="5" />
+      </label>
+      <button id="go" class="btn primary">Сгенерировать</button>
+      <div id="status" class="muted"></div>
+    </section>
+
+    <section id="out" class="list"></section>
+
+    <footer class="foot muted">
+      Если API-ключ не настроен, включится локальный фолбэк (рандом без ИИ).
+    </footer>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
